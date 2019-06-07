@@ -1,0 +1,13 @@
+/* by Akshay Sathiya, 06/04/2019 */
+
+#output {
+    resize: none;
+}
+
+#food {
+    visibility: hidden;
+}
+
+#send-request {
+    visibility: hidden;
+}

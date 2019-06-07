@@ -1,0 +1,35 @@
+<!-- by Akshay Sathiya, 06/04/2019 -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Akshay's Food API</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Food API</h1>
+            <h3>Choose a food group and a food to see information about the food!</h3>
+        </header>
+
+        <form id="http-request">
+            <div id="pick-fg">
+                <select name="food-group" id="food-group"></select>
+            </div>
+            <input id="get-foods" type="button" value="Get Foods">
+            <div id="pick-f">
+                <select name="food" id="food"></select>
+            </div>
+            <input id="send-request" type="button" value="Send Request">
+        </form>
+        <br>
+
+        <textarea name="output" id="output" cols="40" rows="20" readonly></textarea>
+
+        <footer>
+            <p>&copy; Akshay Sathiya 2019</p>
+        </footer>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
