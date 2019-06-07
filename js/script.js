@@ -1,4 +1,4 @@
-// by Akshay Sathiya, 06/04/2019
+// by Akshay Sathiya, 06/07/2019
 
 // grab the DOM elements
 const fgInput = document.querySelector('#food-group');
@@ -9,8 +9,8 @@ const getFoodsButton = document.querySelector('#get-foods');
 
 // obtain all food groups, put in the first select element
 const getFG = new XMLHttpRequest();
-const url = 'http://localhost:8080/foodgroups/';
-getFG.open('GET', url, true);
+const fgUrl = 'http://localhost:8080/foodgroups/';
+getFG.open('GET', fgUrl, true);
 getFG.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         const foodGroups = JSON.parse(getFG.responseText);
@@ -51,11 +51,13 @@ getFoodsButton.addEventListener('click', (e) => {
 sendRequestButton.addEventListener("click", (e) => {
     e.preventDefault();
     const getData = new XMLHttpRequest();
-    const Nurl = 'http://localhost:8080/foodgroups/' + fgInput.value + '/foods/' + fInput.value;
-    getData.open('GET', Nurl, true);
+    const url = 'http://localhost:8080/foodgroups/' + fgInput.value + '/foods/' + fInput.value;
+    getData.open('GET', url, true);
     getData.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             data = JSON.parse(getData.responseText);
+            outputArea.value = data;
+            console.log(data);
         }
     }
     getData.send();
